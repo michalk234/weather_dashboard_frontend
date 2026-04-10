@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./src/ui/styles/main.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">API Dashboard</p>
+          <h1>Weather Test Dashboard</h1>
+          <p class="subtitle">
+            Prosty frontend do testowania Twojego mikroserwisu pogodowego.
+          </p>
+        </div>
+
+        <form id="weather-form" class="search-form" novalidate>
+          <label for="city-input" class="label">Miasto</label>
+          <div class="search-row">
+            <input
+              id="city-input"
+              name="city"
+              type="text"
+              value="Warszawa"
+              placeholder="Np. Warszawa"
+              autocomplete="off"
+            />
+            <button type="submit">Sprawdź</button>
+          </div>
+          <p class="hint">
+            Ustaw adres backendu w pliku <code>src/config.js</code>.
+          </p>
+        </form>
+      </section>
+
+      <section id="status-panel" class="status-panel is-hidden" aria-live="polite"></section>
+
+      <section id="weather-card" class="weather-card is-hidden" aria-live="polite">
+        <div class="weather-top">
+          <div>
+            <p id="location-name" class="location-name">—</p>
+            <p id="weather-description" class="weather-description">—</p>
+          </div>
+          <div class="temperature-wrap">
+            <p id="temperature" class="temperature">—</p>
+            <p id="feels-like" class="feels-like">—</p>
+          </div>
+        </div>
+
+        <div class="weather-grid">
+          <article class="metric-card">
+            <p class="metric-label">Wilgotność</p>
+            <p id="humidity" class="metric-value">—</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Wiatr</p>
+            <p id="wind-speed" class="metric-value">—</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Ciśnienie</p>
+            <p id="pressure" class="metric-value">—</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Współrzędne</p>
+            <p id="coordinates" class="metric-value metric-small">—</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/ui/app.js"></script>
+  </body>
+</html>
